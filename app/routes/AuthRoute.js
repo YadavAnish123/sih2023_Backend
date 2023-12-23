@@ -11,7 +11,8 @@ const {
 	getProfile,
 	getrem,
 	getParticularReminder,
-	getremfilter
+	getremfilter,
+	modalbackend
 	 
 	 
 } = require("../controller/Auth/AuthController");
@@ -19,6 +20,7 @@ const {
 const router = express.Router();
 
 router.post("/register", registerUser);
+router.get("/image/classify",modalbackend );
 router.get("/getreminder/:createdby",protect, getrem);
 router.get("/getremfilter/:createdby/:status",protect, getremfilter);
 router.get("/getParticularReminder/:_id", protect,getParticularReminder);
